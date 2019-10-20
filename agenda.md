@@ -29,3 +29,5 @@
     * Muchos objetos Kubernetes no tratados
     * Desarrollo nativo en Kubernetes
     * Service Mesh
+
+Presentación: https://uales-my.sharepoint.com/:p:/g/personal/mtorres_ual_es/ESELBJoVFOxFuTjhjgQgRqEB8UrZYxVIXD1GT6SJmGqKuQ?e=NhZ48L
