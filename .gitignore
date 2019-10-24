@@ -1,1 +1,4 @@
 Ejemplo04-Docker-Compose/data
+borrar.sh
+.gitignore
+.DS_Store

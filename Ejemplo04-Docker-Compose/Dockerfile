@@ -1,4 +1,4 @@
-FROM tutum/apache-php
+FROM ualmtorres/phalcon-apache-ubuntu
 
 ADD ./app/ /var/www/html
 

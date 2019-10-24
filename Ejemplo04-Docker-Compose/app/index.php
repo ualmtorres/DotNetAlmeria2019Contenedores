@@ -1,18 +1,17 @@
-<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Web PHP-MySQL con Docker</title>
+  <title>Customer Catalog</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 </head>
 <body>
   <div class = "container">
     <div class="jumbotron">
-      <h1 class="display-4">Docker app</h1>
-      <p class="lead">Ejemplo de aplicacion PHP y MySQL con contenedores</p>
+      <h1 class="display-4">Customer Catalog</h1>
+      <p class="lead">Customer Catalog Sample Application</p>
       <hr class="my-4">
-      <p>Usa un contenedor para Apache/PHP y otro para MySQL con almacenamiento de aplicación y de datos en volúmenes externos</p>
+      <p>PHP sample application connected to a MySQL database to list a customer catalog</p>
     </div>
     <table class="table table-striped table-responsive">
       <thead>
@@ -28,13 +27,14 @@
       </thead>
       <tbody>
         <?php
-        $conexion = mysql_connect("my_mysql", "root", "secret");
-        mysql_select_db("SG", $conexion);
+
+        $conexion = mysqli_connect("mysql", "root", "secret", "SG");
 
         $cadenaSQL = "select * from s_customer";
-        $resultado = mysql_query($cadenaSQL);
+	$sentencia = mysqli_prepare($cadenaSQL);
+        $resultado = mysqli_query($conexion, $cadenaSQL);
 
-        while ($fila = mysql_fetch_object($resultado)) {
+        while ($fila = mysqli_fetch_object($resultado)) {
          echo "<tr><td> " .$fila->name . 
          "</td><td>" . $fila->credit_rating .
          "</td><td>" . $fila->address .
@@ -44,7 +44,6 @@
          "</td><td>" . $fila->zip_code .
          "</td></tr>";
        }
-
        ?>
      </tbody>
    </table>
@@ -54,3 +53,4 @@
  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 </body>
 </html>
+
