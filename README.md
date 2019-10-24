@@ -4,4 +4,4 @@ Notas sobre conceptos básicos del desarrollo con contenedores Docker y Kubernet
 
 * [Presentación PPT](Presentacion/20191025DotNetConfAlmeriaKubernetes.pptx)
 * [Presentación PPT](Presentacion/20191025DotNetConfAlmeriaKubernetes.pdf)
-* [Notas del tutorial](https://ualmtorres/github.io/DotNetAlmeria2019Contenedores/)
+* [Notas del tutorial](https://ualmtorres.github.io/DotNetAlmeria2019Contenedores/)
